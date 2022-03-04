@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports Arena</title>
+</head>
+<body>
+<h1>Sports Arena</h1>
+<form method="post" name="frm" action="javascript:void(0)">
+  <p>
+    Sports Choice
+    <select size="1" id="txtSport" name="txtSport">
+      <option value="golf">Golf</option>
+      <option value="tennis">Tennis</option>
+      <option value="baseball">Baseball</option>
+      <option value="basketball">Basketball</option>
+    </select>
+  </p>
+  <p>
+    <input type="button" value="Submit" name="btnSubmit" onclick="getArena()">
+  </p>
+</form>
+<script>
+  function getArena() {
+    var sport;
+
+    sport = document.getElementById("txtSport").value;
+
+    if (sport == "golf")
+      alert("Golf is played on a golf course.");
+    else if (sport == "tennis")
+      alert("Tennis is played on a tennis court.");
+    else if (sport == "baseball")
+      alert("Baseball is played on a baseball diamond.");
+    else if (sport == "basketball")
+      alert("Basketball is played on a basketball court.");
+
+  }
+</script>
+</body>
+</html>
