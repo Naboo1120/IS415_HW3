@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wine Calories</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("p").css("background-color", "red");
+
+      });
+    });
+  </script>
+
+  <style>
+    table { margin-left: auto;
+      margin-right: auto;}
+    p {text-align: center; font-family:arial; color:blue;}
+
+    div {background-color: yellow;}
+
+  </style>
+
+
+
+  <script>
+    function wineCalorie(){
+      var Alco=document.getElementById('RawAlco').value;
+      Alco=parseInt(Alco,10);
+
+      if(isNaN(Alco)){
+        alert("Enter the percentage of alcohol");
+        document.getElementById('RawAlco').value=" ";
+        document.getElementById('RawAlco').focus();
+      }
+      else {
+        var Sugar = document.getElementById('SugarAmount').value;
+        Sugar = parseInt(Sugar, 10);
+        if (isNaN(Sugar)) {
+          alert("Enter the sugar amount per liter");
+          document.getElementById('SugarAmount').value = " ";
+          document.getElementById('SugarAmount').focus();
+        } else {
+          wineCalorieTemp=(Alco/100*150*0.789*7)+(Sugar/1000*150*4);
+          document.getElementById('WineCalorie').value=wineCalorieTemp;
+        }
+      }
+    }
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+<p>Wine Calorie Calculator</p>
+
+<div>
+
+  <FORM Name="Wine">
+    <table border="0">
+      <tr>
+        <td width="200px">Enter the precentage of the alcohol: </td>
+        <td width="200px"><Input Type="text" id="RawAlco" Name="RawAlco" value=" "></td>
+      </tr>
+      <tr>
+        <td width="200px">Enter the sugar amount per liter: </td>
+        <td width="200px"><Input Type="text" id="SugarAmount" Name="SugarAmount" value=" "></td>
+      </tr>
+      <tr>
+        <td width="200px">The wine calories in a glass of wine (approximately 150 ml) is: </td>
+        <td width="200px"><Input Type="text" id="WineCalorie" Name="WineCalorie" value=" "></td>
+      </tr>
+      <tr>
+        <td width="200px"><Input Type="Button" Value="How Many Calories" onclick="wineCalorie()"> </td>
+        <td width="200px"><Input Type="Reset"></td>
+      </tr>
+    </table>
+  </FORM>
+
+</div>
+
+
+</body>
+</html>
